@@ -1,4 +1,4 @@
-"""Simple inventory management module with a few issues to fix."""
+"""Simple inventory management module for interaction and testing exercises."""
 
 
 def add_item(inventory, name, quantity, price):
@@ -7,7 +7,7 @@ def add_item(inventory, name, quantity, price):
 
 
 def remove_item(inventory, name):
-    """Remove an item from inventory."""
+    """Remove an item from inventory, doing nothing if the item is missing."""
     inventory.pop(name, None)
 
 
@@ -20,7 +20,16 @@ def get_total_value(inventory):
 
 
 def apply_discount(inventory, name, percent):
-    """Apply a percentage discount to an item's price."""
+    """Apply a percentage discount to an item's price.
+
+    Args:
+        inventory: Mapping of item names to quantity and price records.
+        name: Name of the existing item to discount.
+        percent: Percentage to subtract; for example, 25 means a 25% discount.
+
+    Raises:
+        KeyError: If the item is missing from inventory.
+    """
     item = inventory[name]
     item["price"] = item["price"] - (item["price"] * percent / 100)
 

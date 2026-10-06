@@ -3,12 +3,18 @@
 A simple Python inventory management module used for learning Codex interaction patterns.
 
 ## Project Structure
-- `inventory.py` — Core inventory functions
-- `test_inventory.py` — pytest test suite (incomplete)
+- `starter/inventory.py` — Core inventory functions
+- `starter/test_inventory.py` — pytest test suite (incomplete)
+
+## Completed Fixes
+- `remove_item` ignores missing items without raising an exception
+- `apply_discount` interprets `percent` as a percentage (25 means 25%)
+- Regression tests cover both fixes
+
+The `starter/` directory contains the completed bug-fix example. The lab now
+uses it for review, verification, and further test coverage work.
 
 ## Known Issues
-- `remove_item` crashes on missing items
-- `apply_discount` treats percentage as a decimal instead of dividing by 100
 - Test coverage is incomplete
 
 ## Conventions

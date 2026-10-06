@@ -8,6 +8,14 @@ permissions, and verify the resulting code.
 
 **Time:** 15-20 minutes
 
+## Current Exercise State
+
+The `starter/` directory now contains the completed example for the original
+two bug fixes: removing a missing item does nothing, and discounts use a
+percentage (`25` means 25%). Regression tests cover both fixes, but overall
+test coverage remains incomplete. Use this version to review the fixes,
+verify their behavior, and practice planning and steering additional tests.
+
 ## Setup
 
 ```bash
@@ -17,7 +25,7 @@ cd exercises/plan-mode-warmup/starter
 Verify Python and pytest are available:
 
 ```bash
-python --version   # 3.9+
+python --version   # 3.11+
 pip install pytest # if not already installed
 ```
 
@@ -32,22 +40,22 @@ codex
 Paste this prompt:
 
 ```text
-Fix the bugs in inventory.py. Make a brief plan first, then wait for
-my approval before editing. The remove_item function crashes when the
-item doesn't exist, and apply_discount treats the percent parameter
-incorrectly.
+Review inventory.py and its existing tests. The original bugs in
+remove_item and apply_discount have already been fixed. Make a brief
+plan to verify those fixes and expand missing test coverage, then wait
+for my approval before editing.
 ```
 
 Before approving the plan, check:
 
-- Does it address both bugs?
+- Does it verify both fixes and identify gaps in test coverage?
 - Does it mention the right files?
 - Does it include verification?
 - Is the scope small enough for this lab?
 
 Approve the plan, or reply with a correction before Codex edits.
 
-## Part 2: Verify the Fix
+## Part 2: Verify the Existing Fixes
 
 Run this quick smoke test:
 
@@ -148,7 +156,7 @@ codex exec "Review the uncommitted diff for bugs; do not edit files" \
 - [ ] You steered a running task with a follow-up message
 - [ ] You inspected permissions and reviewed the diff
 - [ ] `pytest -v` passes
-- [ ] Both bugs in `inventory.py` are fixed
+- [ ] You verified both existing fixes in `inventory.py`
 
 ## Key Takeaways
 
